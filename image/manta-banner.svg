@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Definitions -->
+  <defs>
+    <!-- Modern gradient -->
+    <linearGradient id="modern-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Accent gradient -->
+    <linearGradient id="accent-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="blue-glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#3b82f6" flood-opacity="0.3"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#modern-gradient)"/>
+
+  <!-- Abstract code pattern -->
+  <g opacity="0.1" stroke="#ffffff" stroke-width="1">
+    <line x1="50" y1="50" x2="150" y2="50"/>
+    <line x1="650" y1="350" x2="750" y2="350"/>
+    <circle cx="50" cy="50" r="2" fill="#ffffff"/>
+    <circle cx="150" cy="50" r="2" fill="#ffffff"/>
+    <circle cx="650" cy="350" r="2" fill="#ffffff"/>
+    <circle cx="750" cy="350" r="2" fill="#ffffff"/>
+  </g>
+
+  <!-- Stylized Manta Icon -->
+  <g transform="translate(400, 180)" filter="url(#blue-glow)">
+    <!-- Geometric Manta shape -->
+    <path d="M0 0
+             L80 -40 L160 -20 L180 20
+             C160 10, 120 5, 80 8
+             C40 10, 20 15, 0 20
+             C-20 15, -40 10, -80 8
+             C-120 5, -160 10, -180 20
+             L-160 -20 L-80 -40 Z"
+          fill="url(#accent-gradient)"/>
+
+    <!-- Circuit-like details -->
+    <path d="M-60 -20 L-40 -25 L-20 -20"
+          fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.7"/>
+    <path d="M20 -20 L40 -25 L60 -20"
+          fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.7"/>
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(400, 280)">
+    <!-- Main title -->
+    <text x="0" y="0"
+          font-family="'Arial Black', sans-serif"
+          font-size="64"
+          font-weight="900"
+          fill="#ffffff"
+          text-anchor="middle"
+          letter-spacing="10">
+      MANTA
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="40"
+          font-family="Arial, sans-serif"
+          font-size="20"
+          fill="#64748b"
+          text-anchor="middle"
+          letter-spacing="4">
+      SELF-EVOLVING CODE AGENT
+    </text>
+  </g>
+</svg>
