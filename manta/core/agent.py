@@ -8,7 +8,7 @@ from manta.core.reply_handler import ReplyHandler, ResponseType
 from manta.llm.client import LLMClient
 from manta.prompts.system_prompt import system_prompt as prompt_template
 from manta.session.history import ConversationHistory
-from manta.session.manager import SessionManager
+from manta.session.manager import IOSessionManager
 
 
 class CodeAgent:
@@ -21,8 +21,7 @@ class CodeAgent:
         self.conversation_history = ConversationHistory()
         self.reply_handler = ReplyHandler(self.config, self.conversation_history)
 
-        self.session_manager = SessionManager()
-        self.session = self.session_manager.session
+        self.session_manager = IOSessionManager(self.conversation_history)
 
         # Initialize system prompt
         system_prompt = self._create_system_prompt()
@@ -72,19 +71,18 @@ class CodeAgent:
             processed = self.reply_handler.process_response(current_response)
 
             if processed.type == ResponseType.FINAL_RESPONSE:
-                print(processed.content)
+                self.session_manager.io.print_message(processed.content)
                 break
-
-            elif processed.type == ResponseType.TOOL_CALL:
-                print(
-                    f"Tool: {processed.tool_name} with params: {processed.tool_params}"
+            elif (
+                processed.tool_name
+                and processed.tool_params
+                and processed.type == ResponseType.TOOL_CALL
+            ):
+                self.session_manager.io.print_tool_execution(
+                    processed.tool_name, processed.tool_params
                 )
 
-                if (
-                    processed.tool_name
-                    and processed.tool_params
-                    and self.reply_handler._ask_permission(processed.tool_name)
-                ):
+                if self.reply_handler._ask_permission(processed.tool_name):
                     # Execute tool and get result
                     self.reply_handler.execute_tool(
                         processed.tool_name, processed.tool_params
@@ -100,14 +98,14 @@ class CodeAgent:
                     break
 
     def run(self):
-        print(f"Hello, I am {self.name}, your enhanced agent.")
+        self.session_manager.io.print_welcome(self.name)
 
         while True:
             try:
-                command = self.session.prompt("Enter a command: ")
+                command = self.session_manager.io.prompt("Enter a command: ")
 
                 if command.lower() == "exit":
-                    print("Goodbye!")
+                    self.session_manager.io.print_goodbye()
                     break
 
                 command_type = CommandClassifier.classify(command)
@@ -121,8 +119,10 @@ class CodeAgent:
                     history = self.conversation_history.get_context()
                     for message in history:
                         print(f"{message['role']}: {message['content']}")
-                    print(
-                        f"total messages: {len(self.conversation_history.messages)}, tokens: {self.conversation_history.get_total_tokens()}"
+                    self.session_manager.io.print_conversation_history(
+                        history,
+                        len(self.conversation_history.messages),
+                        self.conversation_history.get_total_tokens(),
                     )
                     continue
                 else:

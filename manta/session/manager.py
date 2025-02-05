@@ -8,6 +8,17 @@ from prompt_toolkit.completion import Completer, Completion
 from prompt_toolkit.document import Document
 from prompt_toolkit.key_binding import KeyBindings
 from prompt_toolkit.keys import Keys
+from prompt_toolkit.styles import Style as PromptStyle
+
+from manta.session.history import ConversationHistory
+from manta.session.io import CYAN, IO
+
+# Define prompt_toolkit styles using the same color
+prompt_style = PromptStyle.from_dict(
+    {
+        "prompt": CYAN,
+    }
+)
 
 
 class DynamicFileCompleter(Completer):
@@ -77,9 +88,11 @@ class DynamicFileCompleter(Completer):
             )
 
 
-class SessionManager:
-    def __init__(self):
+class IOSessionManager:
+    def __init__(self, conversation_history: ConversationHistory):
+        self.conversation_history = conversation_history
         self.session = self.create_prompt_session()
+        self.io = IO(self.session, conversation_history)
 
     def get_file_content(self, file_path: str) -> Optional[str]:
         try:
@@ -101,6 +114,7 @@ class SessionManager:
             completer=DynamicFileCompleter(),
             complete_while_typing=True,
             key_bindings=self.create_key_bindings(),
+            style=prompt_style,
         )
         return session
 
@@ -133,13 +147,13 @@ class SessionManager:
                         full_file_path = os.path.join(root, file_name)
                         file_content = self.get_file_content(full_file_path)
                         if file_content:
-                            print(f"File {full_file_path} attached successfully.")
+                            self.io.print_file_attachment(full_file_path)
                             attached_contents.append((full_file_path, file_content))
             else:
                 # If the path is a file, process it directly
                 file_content = self.get_file_content(abs_path)
                 if file_content:
-                    print(f"File {file_path} attached successfully.")
+                    self.io.print_file_attachment(file_path)
                     attached_contents.append((file_path, file_content))
 
         if not attached_contents:

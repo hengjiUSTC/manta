@@ -17,6 +17,7 @@ setup(
         "pytest>=8.0.0",
         "unidiff>=0.7.0",
         "tiktoken>=0.8.0",
+        "rich>=13.0.0",
     ],
     entry_points={"console_scripts": ["manta=manta.__main__:main"]},
     extras_require={
