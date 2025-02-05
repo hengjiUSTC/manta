@@ -3,7 +3,7 @@ import os
 import subprocess
 from typing import Any, Dict, Optional
 
-from code_manta.tools.base import Tool, ToolResult
+from mantacoder.tools.base import Tool, ToolResult
 
 
 class CommandExecutionTool(Tool):

@@ -3,16 +3,16 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import Optional
 
-from code_manta.core.config import Config
-from code_manta.llm.client import LLMClient
-from code_manta.session.history import ConversationHistory
-from code_manta.tools.ask_user import AskUserTool
-from code_manta.tools.attempt_completion import AttemptCompletion
-from code_manta.tools.command_line import CommandExecutionTool
-from code_manta.tools.manager import ToolManager
-from code_manta.tools.read_file import ReadFileTool
-from code_manta.tools.replace_file import ReplaceFileTool
-from code_manta.tools.write_file import WriteFileTool
+from mantacoder.core.config import Config
+from mantacoder.llm.client import LLMClient
+from mantacoder.session.history import ConversationHistory
+from mantacoder.tools.ask_user import AskUserTool
+from mantacoder.tools.attempt_completion import AttemptCompletion
+from mantacoder.tools.command_line import CommandExecutionTool
+from mantacoder.tools.manager import ToolManager
+from mantacoder.tools.read_file import ReadFileTool
+from mantacoder.tools.replace_file import ReplaceFileTool
+from mantacoder.tools.write_file import WriteFileTool
 
 
 class ResponseType(Enum):

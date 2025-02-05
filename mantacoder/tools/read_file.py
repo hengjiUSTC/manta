@@ -2,8 +2,8 @@ import logging
 import os
 from typing import Any, Dict
 
-from code_manta.tools.base import Tool, ToolResult
-from code_manta.tools.file_utils import FileUtils
+from mantacoder.tools.base import Tool, ToolResult
+from mantacoder.tools.file_utils import FileUtils
 
 
 class ReadFileTool(Tool):

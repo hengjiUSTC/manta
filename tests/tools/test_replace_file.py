@@ -3,7 +3,7 @@ import unittest
 from typing import Any, Dict
 from unittest.mock import mock_open, patch
 
-from code_manta.tools.replace_file import FileUtils, ReplaceFileTool, ToolResult
+from mantacoder.tools.replace_file import FileUtils, ReplaceFileTool, ToolResult
 
 
 class TestReplaceFileTool(unittest.TestCase):

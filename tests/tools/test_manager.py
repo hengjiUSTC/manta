@@ -2,7 +2,7 @@ import unittest
 from typing import Any, Dict, Set
 from unittest.mock import Mock, patch
 
-from code_manta.tools.manager import (
+from mantacoder.tools.manager import (
     ParsedTool,
     Tool,
     ToolManager,

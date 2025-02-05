@@ -1,12 +1,12 @@
 from setuptools import find_packages, setup
 
 setup(
-    name="code-manta",
+    name="mantacoder",
     version="0.1.0",
     author="Heng Ji",
     author_email="jihengcu@gmail.com",
     description="A Python library for Code Agent Manta",
-    packages=find_packages(include=["code_manta", "code_manta.*", "tests", "tests.*"]),
+    packages=find_packages(include=["mantacoder", "mantacoder.*", "tests", "tests.*"]),
     include_package_data=True,
     install_requires=[
         "requests>=2.26.0",
@@ -19,7 +19,7 @@ setup(
         "tiktoken>=0.8.0",
         "rich>=13.0.0",
     ],
-    entry_points={"console_scripts": ["code-manta=code_manta.__main__:main"]},
+    entry_points={"console_scripts": ["mantacoder=mantacoder.__main__:main"]},
     extras_require={
         "dev": [
             "black",

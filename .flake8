@@ -11,7 +11,7 @@ max-line-length = 88
 # D400: First line should end with a period
 # D401: First line should be in imperative mood
 extend-ignore = E203, W503, E501, F401, D100, D101, D102, D103, D104, D105, D107, D205, D400, D401
-exclude = .git,__pycache__,build,dist,code_manta/prompts/system_prompt.py,examples/
+exclude = .git,__pycache__,build,dist,mantacoder/prompts/system_prompt.py,examples/
 per-file-ignores =
     __init__.py:F401
-    code_manta/*:E221
+    mantacoder/*:E221
