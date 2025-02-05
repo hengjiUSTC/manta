@@ -2,11 +2,13 @@ from setuptools import find_packages, setup
 
 setup(
     name="mantacoder",
-    version="0.1.2",
+    version="0.1.4",
     author="Heng Ji",
     author_email="jihengcu@gmail.com",
     description="A Python library for Code Agent MantaCoder",
-    packages=find_packages(include=["mantacoder", "mantacoder.*", "tests", "tests.*"]),
+    packages=find_packages(
+        include=["mantacoder", "mantacoder.*", "tests", "tests.*", "image.*"]
+    ),
     include_package_data=True,
     install_requires=[
         "requests>=2.26.0",
