@@ -15,13 +15,20 @@ MantaCoder is an intelligent code agent system that self-evolves. Like its names
 
 ## Installation
 
+Install from source
+
 ```bash
 # Clone the repository
 git clone https://github.com/yourusername/mantacoder.git
 cd mantacoder
 
 # Install
-pip install -e .
+pip install .
+```
+
+Install from pypi
+```bash
+pip3 install mantacoder
 ```
 
 ## Usage
@@ -29,7 +36,7 @@ pip install -e .
 ### Basic Startup
 
 ```bash
-MantaCoder --api-key YOUR_API_KEY --base-url YOUR_BASE_URL --model MODEL_NAME
+mantacoder --api-key YOUR_API_KEY --base-url YOUR_BASE_URL --model MODEL_NAME
 ```
 
 ### Tool Commands
