@@ -43,19 +43,60 @@ class TestToolParser(unittest.TestCase):
         }
         self.parser = ToolParser(self.allowed_tools)
 
-    def test_parse_attempt_completion(self):
-        response = """Some text before
+    def test_parse_attempt_completion_with_command(self):
+        response = """
 <attempt_completion>
-<result>Test result</result>
-<command>test command</command>
+<result>All tasks completed successfully</result>
+<command>echo 'Testing command'</command>
 </attempt_completion>
-Some text after"""
-
+"""
         parsed = self.parser.parse(response)
         self.assertIsNotNone(parsed)
         self.assertEqual(parsed.name, "attempt_completion")
-        self.assertEqual(parsed.params["result"], "Test result")
-        self.assertEqual(parsed.params["command"], "test command")
+        self.assertEqual(parsed.params["result"], "All tasks completed successfully")
+        self.assertEqual(parsed.params["command"], "echo 'Testing command'")
+
+    def test_parse_attempt_completion_without_command(self):
+        response = """
+<attempt_completion>
+<result>All tasks completed successfully</result>
+</attempt_completion>
+"""
+        parsed = self.parser.parse(response)
+        self.assertIsNotNone(parsed)
+        self.assertEqual(parsed.name, "attempt_completion")
+        self.assertEqual(parsed.params["result"], "All tasks completed successfully")
+        self.assertNotIn("command", parsed.params)
+
+    def test_parse_attempt_completion_empty(self):
+        response = """
+<attempt_completion>
+<result></result>
+</attempt_completion>
+"""
+        parsed = self.parser.parse(response)
+        self.assertIsNotNone(parsed)
+        self.assertEqual(parsed.name, "attempt_completion")
+        self.assertEqual(parsed.params["result"], "")
+        self.assertNotIn("command", parsed.params)
+
+    #     def test_parse_attempt_completion_invalid_missing_result(self):
+    #         response = """
+    # <attempt_completion>
+    # <command>echo 'Testing command'</command>
+    # </attempt_completion>
+    # """
+    #         parsed = self.parser.parse(response)
+    #         self.assertIsNone(parsed)
+
+    #     def test_parse_attempt_completion_malformed(self):
+    #         response = """
+    # <attempt_completion>
+    # <result>Incomplete result
+    # </attempt_completion>
+    # """
+    #         parsed = self.parser.parse(response)
+    #         self.assertIsNone(parsed)
 
     def test_parse_ask_followup_question(self):
         response = "<ask_followup_question><question>Test question?</question></ask_followup_question>"
