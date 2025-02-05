@@ -2,8 +2,8 @@
 import argparse
 import logging
 
-from manta.core.agent import CodeAgent
-from manta.core.config import Config
+from code_manta.core.agent import CodeAgent
+from code_manta.core.config import Config
 
 
 def setup_logging(debug: bool = False) -> None:

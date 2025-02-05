@@ -10,8 +10,8 @@ from prompt_toolkit.key_binding import KeyBindings
 from prompt_toolkit.keys import Keys
 from prompt_toolkit.styles import Style as PromptStyle
 
-from manta.session.history import ConversationHistory
-from manta.session.io import CYAN, IO
+from code_manta.session.history import ConversationHistory
+from code_manta.session.io import CYAN, IO
 
 # Define prompt_toolkit styles using the same color
 prompt_style = PromptStyle.from_dict(

@@ -2,7 +2,13 @@ import unittest
 from typing import Any, Dict, Set
 from unittest.mock import Mock, patch
 
-from manta.tools.manager import ParsedTool, Tool, ToolManager, ToolParser, ToolResult
+from code_manta.tools.manager import (
+    ParsedTool,
+    Tool,
+    ToolManager,
+    ToolParser,
+    ToolResult,
+)
 
 
 class MockTool(Tool):

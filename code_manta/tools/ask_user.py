@@ -1,7 +1,7 @@
 import os
 from typing import Any, Dict
 
-from manta.tools.base import Tool, ToolResult
+from code_manta.tools.base import Tool, ToolResult
 
 
 class AskUserTool(Tool):

@@ -2,13 +2,13 @@ import logging
 import os
 from typing import List, Optional
 
-from manta.core.command_classifier import CommandClassifier, CommandType
-from manta.core.config import Config
-from manta.core.reply_handler import ReplyHandler, ResponseType
-from manta.llm.client import LLMClient
-from manta.prompts.system_prompt import system_prompt as prompt_template
-from manta.session.history import ConversationHistory
-from manta.session.manager import IOSessionManager
+from code_manta.core.command_classifier import CommandClassifier, CommandType
+from code_manta.core.config import Config
+from code_manta.core.reply_handler import ReplyHandler, ResponseType
+from code_manta.llm.client import LLMClient
+from code_manta.prompts.system_prompt import system_prompt as prompt_template
+from code_manta.session.history import ConversationHistory
+from code_manta.session.manager import IOSessionManager
 
 
 class CodeAgent:

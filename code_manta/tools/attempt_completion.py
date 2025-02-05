@@ -1,7 +1,7 @@
 from subprocess import CalledProcessError, run
 from typing import Any, Dict
 
-from manta.tools.base import Tool, ToolResult
+from code_manta.tools.base import Tool, ToolResult
 
 
 class AttemptCompletion(Tool):

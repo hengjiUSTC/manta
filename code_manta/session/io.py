@@ -11,7 +11,7 @@ from rich.table import Table
 from rich.text import Text
 from rich.theme import Theme
 
-from manta.session.history import ConversationHistory
+from code_manta.session.history import ConversationHistory
 
 # Color definitions using standard color codes
 CYAN = "#00FFFF"  # Standard cyan color

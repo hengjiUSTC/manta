@@ -3,8 +3,8 @@ from typing import Dict, List
 
 from openai import OpenAI
 
-from manta.core.config import Config
-from manta.core.exceptions import LLMError
+from code_manta.core.config import Config
+from code_manta.core.exceptions import LLMError
 
 logging.getLogger("httpx").setLevel(logging.WARNING)
 
