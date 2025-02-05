@@ -172,6 +172,4 @@ cython_debug/
 
 .DS_Store
 
-run_agent.sh
-
 scripts/
