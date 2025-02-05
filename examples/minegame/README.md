@@ -1,6 +1,6 @@
 # AI-Assisted Minesweeper Game Development
 
-A documentation of building a Minesweeper game with Manta AI assistant.
+A documentation of building a Minesweeper game with MantaCoder AI assistant.
 
 ## Part 1: Initial Development
 

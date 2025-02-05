@@ -1,10 +1,10 @@
 <div align="center">
-  <img src="image/manta-banner.svg" alt="Manta Banner" width="800"/>
+  <img src="image/manta-banner.svg" alt="MantaCoder Banner" width="800"/>
 </div>
 
-# Manta
+# MantaCoder
 
-Manta is an intelligent code agent system that self-evolves. Like its namesake, the Manta Ray, it gracefully navigates through code tasks with intelligence and efficiency.
+MantaCoder is an intelligent code agent system that self-evolves. Like its namesake, the MantaCoder Ray, it gracefully navigates through code tasks with intelligence and efficiency.
 
 ## Features
 
@@ -17,8 +17,8 @@ Manta is an intelligent code agent system that self-evolves. Like its namesake, 
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/manta.git
-cd manta
+git clone https://github.com/yourusername/mantacoder.git
+cd mantacoder
 
 # Install
 pip install -e .
@@ -29,18 +29,18 @@ pip install -e .
 ### Basic Startup
 
 ```bash
-manta --api-key YOUR_API_KEY --base-url YOUR_BASE_URL --model MODEL_NAME
+MantaCoder --api-key YOUR_API_KEY --base-url YOUR_BASE_URL --model MODEL_NAME
 ```
 
 ### Tool Commands
 
-Manta provides several powerful tools that can be accessed through natural language commands:
+MantaCoder provides several powerful tools that can be accessed through natural language commands:
 
 #### Command Execution
 Execute system commands directly:
 ```
 "Please run ls in the current directory"
--> Manta will use: <execute_command> <command>ls</command> </execute_command>
+-> MantaCoder will use: <execute_command> <command>ls</command> </execute_command>
 ```
 
 #### File Operations
@@ -48,13 +48,13 @@ Execute system commands directly:
 **Reading Files**:
 ```
 "Show me the contents of config.json"
--> Manta will use: <read_file> <path>config.json</path> </read_file>
+-> MantaCoder will use: <read_file> <path>config.json</path> </read_file>
 ```
 
 **Writing Files**:
 ```
 "Create a new Python script called hello.py"
--> Manta will use:
+-> MantaCoder will use:
 <write_to_file>
 <path>hello.py</path>
 <content>
@@ -66,7 +66,7 @@ print("Hello, World!")
 **Updating Files**:
 ```
 "Update the React import to include useState"
--> Manta will use:
+-> MantaCoder will use:
 <replace_in_file>
 <path>component.jsx</path>
 <diff>
@@ -93,11 +93,11 @@ To add a file to the conversation context:
 ```
 @path/to/file.txt
 ```
-This makes the file content available to Manta for reference in subsequent interactions.
+This makes the file content available to MantaCoder for reference in subsequent interactions.
 
 ### Example Interactions
 
-Here are some common ways to interact with Manta:
+Here are some common ways to interact with MantaCoder:
 
 1. Create a new project:
    ```
@@ -131,8 +131,8 @@ pytest tests/
 ## Architecture
 
 ```
-manta/
-├── manta/
+mantacoder/
+├── mantacoder/
     ├── core/         # Core agent functionality
     ├── llm/          # Language model integration
     ├── session/      # Session management
@@ -142,15 +142,15 @@ manta/
 
 ## Examples
 
-The `examples/` directory contains practical demonstrations of using Manta for various project types:
+The `examples/` directory contains practical demonstrations of using MantaCoder for various project types:
 
 ```
 examples/
-├── snakegame/         # Creating a snakegame web applications with Manta
-├── minegame/          # Creating a minesweeper web applications with Manta
+├── snakegame/         # Creating a snakegame web applications with MantaCoder
+├── minegame/          # Creating a minesweeper web applications with MantaCoder
 ```
 
-These examples serve as both documentation and starting points for your own projects. They demonstrate real-world applications of Manta's features and can be used as templates for similar implementations.
+These examples serve as both documentation and starting points for your own projects. They demonstrate real-world applications of MantaCoder's features and can be used as templates for similar implementations.
 
 ## Contributing
 

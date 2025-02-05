@@ -9,4 +9,4 @@ class Config:
     api_key: str
     base_url: str
     model: str
-    name: str = "Manta"
+    name: str = "MantaCoder"

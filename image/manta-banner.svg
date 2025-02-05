@@ -38,9 +38,9 @@
     <circle cx="750" cy="350" r="2" fill="#ffffff"/>
   </g>
 
-  <!-- Stylized Manta Icon -->
+  <!-- Stylized MantaCoder Icon -->
   <g transform="translate(400, 180)" filter="url(#blue-glow)">
-    <!-- Geometric Manta shape -->
+    <!-- Geometric MantaCoder shape -->
     <path d="M0 0
              L80 -40 L160 -20 L180 20
              C160 10, 120 5, 80 8
@@ -67,7 +67,7 @@
           fill="#ffffff"
           text-anchor="middle"
           letter-spacing="10">
-      MANTA
+      MantaCoder
     </text>
 
     <!-- Subtitle -->

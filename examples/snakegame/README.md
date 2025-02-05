@@ -1,6 +1,6 @@
 # AI-Assisted Snake Game Creation
 
-This is a classic Snake game project developed with the assistance of an AI agent (Manta). The project demonstrates how to efficiently build a web-based game using AI technology, showcasing the advantages of AI-assisted development through a clear and concise development process.
+This is a classic Snake game project developed with the assistance of an AI agent (MantaCoder). The project demonstrates how to efficiently build a web-based game using AI technology, showcasing the advantages of AI-assisted development through a clear and concise development process.
 
 ## Technology Stack
 
@@ -59,4 +59,4 @@ Use the `open index.html` command to open the game in a browser, displaying a cl
 
 ## Acknowledgments
 
-Special thanks to the Manta AI assistant for providing professional guidance and efficient collaboration throughout the development process. This project excellently demonstrates the potential of AI-assisted development, showing how a complete game can be developed through simple dialogue interactions.
+Special thanks to the MantaCoder AI assistant for providing professional guidance and efficient collaboration throughout the development process. This project excellently demonstrates the potential of AI-assisted development, showing how a complete game can be developed through simple dialogue interactions.
