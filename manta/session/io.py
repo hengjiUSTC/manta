@@ -100,7 +100,9 @@ class IO:
         """Print regular messages with optional style"""
         self.console.print(message, style=style)
 
-    def print_tool_execution(self, tool_name: str, tool_params: dict):
+    def print_tool_execution(self, tool_name: str, tool_params: dict, messsage: str):
+        self.print_message(messsage)
+
         """Print tool execution details in a structured format"""
         tool_table = Table(show_header=False, box=box.SIMPLE)
         tool_table.add_column("Property", style="tool")

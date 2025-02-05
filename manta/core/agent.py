@@ -79,7 +79,7 @@ class CodeAgent:
                 and processed.type == ResponseType.TOOL_CALL
             ):
                 self.session_manager.io.print_tool_execution(
-                    processed.tool_name, processed.tool_params
+                    processed.tool_name, processed.tool_params, current_response
                 )
 
                 if self.reply_handler._ask_permission(processed.tool_name):
