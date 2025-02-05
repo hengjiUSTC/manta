@@ -147,6 +147,7 @@ The `examples/` directory contains practical demonstrations of using Manta for v
 ```
 examples/
 ├── snakegame/         # Creating a snakegame web applications with Manta
+├── minegame/          # Creating a minesweeper web applications with Manta
 ```
 
 These examples serve as both documentation and starting points for your own projects. They demonstrate real-world applications of Manta's features and can be used as templates for similar implementations.
