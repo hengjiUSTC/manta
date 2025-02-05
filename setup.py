@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="mantacoder",
-    version="0.1.0",
+    version="0.1.1",
     author="Heng Ji",
     author_email="jihengcu@gmail.com",
     description="A Python library for Code Agent Manta",
@@ -41,4 +41,7 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    # Add these in your setup() function
+    long_description=open("README.md").read(),
+    long_description_content_type="text/markdown",
 )
