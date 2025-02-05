@@ -98,7 +98,8 @@ class IO:
 
     def print_message(self, message: str, style: str = "info"):
         """Print regular messages with optional style"""
-        self.console.print(message, style=style)
+        text = Text(message)
+        self.console.print(text, style=style)
 
     def print_tool_execution(self, tool_name: str, tool_params: dict, messsage: str):
         self.print_message(messsage)
