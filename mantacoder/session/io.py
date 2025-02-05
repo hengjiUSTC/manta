@@ -51,6 +51,7 @@ class IO:
         """Print current conversation status in a single line"""
         total_messages = len(self.conversation_history.messages)
         total_tokens = self.conversation_history.get_total_tokens()
+        max_tokens = self.conversation_history.get_max_tokens()
 
         # Create horizontal line with consistent width
         width = self.console.width if self.console.width else 80
@@ -62,7 +63,7 @@ class IO:
         status.append(str(total_messages), style="stat_value")
         status.append(" | ", style="separator")
         status.append("Tokens: ", style="stat_label")
-        status.append(str(total_tokens), style="stat_value")
+        status.append(f"{total_tokens}/{max_tokens}", style="stat_value")
 
         # Print status line
         self.console.print(status)

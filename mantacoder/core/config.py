@@ -10,3 +10,4 @@ class Config:
     base_url: str
     model: str
     name: str = "MantaCoder"
+    max_tokens: int = 16000

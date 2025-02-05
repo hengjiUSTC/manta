@@ -18,7 +18,7 @@ class CodeAgent:
         self.client = LLMClient(config)
 
         # Initialize conversation history
-        self.conversation_history = ConversationHistory()
+        self.conversation_history = ConversationHistory(max_tokens=config.max_tokens)
         self.reply_handler = ReplyHandler(self.config, self.conversation_history)
 
         self.session_manager = IOSessionManager(self.conversation_history)

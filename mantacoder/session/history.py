@@ -48,6 +48,10 @@ class ConversationHistory:
         """Get the total token count for the current messages."""
         return self._total_tokens
 
+    def get_max_tokens(self) -> int:
+        """Get the maximum token limit."""
+        return self.max_tokens
+
     def clear(self) -> None:
         """Clear conversation history except system prompt."""
         system_tokens = self._token_counts[0]  # Save system prompt token count

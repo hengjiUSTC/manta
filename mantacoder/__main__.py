@@ -24,6 +24,9 @@ def parse_arguments() -> argparse.Namespace:
     )
     parser.add_argument("--model", type=str, required=True, help="API model name")
     parser.add_argument(
+        "--max-tokens", type=int, required=False, help="Max tokens", default=16000
+    )
+    parser.add_argument(
         "--debug",
         action="store_true",
         help="Enable debug mode with more verbose logging.",
@@ -43,7 +46,12 @@ def main() -> None:
         f"Starting agent with config: model={args.model}, base_url={args.base_url}"
     )
 
-    config = Config(model=args.model, api_key=args.api_key, base_url=args.base_url)
+    config = Config(
+        model=args.model,
+        api_key=args.api_key,
+        base_url=args.base_url,
+        max_tokens=args.max_tokens,
+    )
     agent = CodeAgent(config)
     agent.run()
 
