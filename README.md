@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="image/manta-banner.svg" alt="MantaCoder Banner" width="800"/>
+  <img src="https://raw.githubusercontent.com/hengjiUSTC/mantacoder/main/image/manta-banner.svg" alt="MantaCoder Banner" width="800"/>
 </div>
 
 # MantaCoder

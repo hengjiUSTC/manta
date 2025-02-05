@@ -6,9 +6,7 @@ setup(
     author="Heng Ji",
     author_email="jihengcu@gmail.com",
     description="A Python library for Code Agent MantaCoder",
-    packages=find_packages(
-        include=["mantacoder", "mantacoder.*", "tests", "tests.*", "image.*"]
-    ),
+    packages=find_packages(include=["mantacoder", "mantacoder.*", "tests", "tests.*"]),
     include_package_data=True,
     install_requires=[
         "requests>=2.26.0",
