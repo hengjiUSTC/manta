@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="mantacoder",
-    version="0.1.6",
+    version="0.2.0",
     author="Heng Ji",
     author_email="jihengcu@gmail.com",
     description="A Python library for Code Agent MantaCoder",
