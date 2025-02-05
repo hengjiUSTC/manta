@@ -44,4 +44,10 @@ setup(
     # Add these in your setup() function
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
+    project_urls={
+        "Homepage": "https://github.com/hengjiUSTC/mantacoder",
+        "Bug Tracker": "https://github.com/hengjiUSTC/mantacoder/issues",
+        "Documentation": "https://github.com/hengjiUSTC/mantacoder#readme",
+        "Source Code": "https://github.com/hengjiUSTC/mantacoder",
+    },
 )
