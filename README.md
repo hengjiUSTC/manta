@@ -4,7 +4,7 @@
 
 # MantaCoder
 
-MantaCoder is an intelligent code agent system that self-evolves. Like its namesake, the MantaCoder Ray, it gracefully navigates through code tasks with intelligence and efficiency.
+MantaCoder is an intelligent code agent system that self-evolves. Like its namesake, the Manta Ray, it gracefully navigates through code tasks with intelligence and efficiency.
 
 ## Features
 
