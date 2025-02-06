@@ -84,8 +84,11 @@ class CodeAgent:
 
                 if self.reply_handler._ask_permission(processed.tool_name):
                     # Execute tool and get result
-                    self.reply_handler.execute_tool(
+                    result = self.reply_handler.execute_tool(
                         processed.tool_name, processed.tool_params
+                    )
+                    self.session_manager.io.print_message(
+                        f"{result.message}:\n{result.data}"
                     )
 
                     # Get next response from LLM

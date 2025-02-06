@@ -8,6 +8,7 @@ from mantacoder.llm.client import LLMClient
 from mantacoder.session.history import ConversationHistory
 from mantacoder.tools.ask_user import AskUserTool
 from mantacoder.tools.attempt_completion import AttemptCompletion
+from mantacoder.tools.base import ToolResult
 from mantacoder.tools.command_line import CommandExecutionTool
 from mantacoder.tools.manager import ToolManager
 from mantacoder.tools.read_file import ReadFileTool
@@ -76,7 +77,7 @@ class ReplyHandler:
             )
         return ProcessedResponse(type=ResponseType.FINAL_RESPONSE, content=response)
 
-    def execute_tool(self, tool: str, params: dict) -> Optional[str]:
+    def execute_tool(self, tool: str, params: dict) -> ToolResult:
         """Execute a tool and return the result."""
         result = self.tool_manager.execute_tool(tool, params)
 
@@ -86,7 +87,7 @@ class ReplyHandler:
         if result.data:
             self.conversations.add_message("user", str(result.data))
 
-        return result.message
+        return result
 
     def get_next_response(self) -> str:
         """Get next response from LLM based on current conversation context."""
